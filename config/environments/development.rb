@@ -1,20 +1,4 @@
 Learning::Application.configure do
-    
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.perform_deliveries = true
-  ActionMailer::Base.raise_delivery_errors = true
-  ActionMailer::Base.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address            => 'smtp.gmail.com',
-    :port               => 587,
-    :tls                  => true,
-    :domain             => 'gmail.com',
-    :authentication     => :login,
-    :user_name          => 'learn.app22@gmail.com',
-    :password           => 'learn.app22'
-  }
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-
 
   # Settings specified here will take precedence over those in config/application.rb
   #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
@@ -49,4 +33,24 @@ Learning::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+    # Show full error reports and disable caching
+  config.consider_all_requests_local       = true
+  config.action_controller.perform_caching = false
+
+  # Don't care if the mailer can't send
+  # Don't care if the mailer can't send
+#smtp mail server settings
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.default_url_options = { :host => 'devhome.intranet.mckinsey.com/devapps' }
+config.action_mailer.default :charset => "utf-8"
+config.action_mailer.default :mime_version => "1.0"
+config.action_mailer.default :implicit_parts_order => [ "text/html", "text/plain"]
+config.action_mailer.smtp_settings = {
+  :address => "natest-maildb25.ads.mckinsey.com",
+  :domain =>  "natest-maildb25.ads.mckinsey.com",
+  :port => 25
+}
+
 end
