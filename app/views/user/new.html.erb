@@ -1,11 +1,4 @@
-<%= form_for @user, :url => user_index_path do |f| %>
-   <p><%= f.label :email %>  
-   <%= f.text_field :email %></p>
-
-   <p><%= f.label :password  %>
-   <%= f.password_field :password %></p>  
-
-   <p><%= f.label :password_confirmation  %>
-   <%= f.password_field :password_confirmation %></p>
-
-   <p><%= f.submit "Save" %></p> <% end %> 
+<%- model_class = @user.class -%>
+<h1><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
+                               :default => "New #{model_class.model_name.human}") %></h1>
+<%= render :partial => 'form' %>

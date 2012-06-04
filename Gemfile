@@ -17,11 +17,11 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  #gem 'execjs'
+  gem 'execjs'
   #
-  #gem 'therubyracer'
+  gem 'therubyracer'
   #
-  #gem 'twitter-bootstrap-rails'
+  gem 'twitter-bootstrap-rails'
   gem 'uglifier', '>= 1.0.3'
 end
 
